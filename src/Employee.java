@@ -47,26 +47,14 @@ public class Employee {
         return name;
     }
 
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getLastname() {
         return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
     }
 
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
 
     public float getSalary() {
         return salary;
@@ -82,6 +70,10 @@ public class Employee {
 
     public void setDepartment(int department) {
         this.department = department;
+    }
+
+    public int getID() {
+        return ID;
     }
 
     @Override
