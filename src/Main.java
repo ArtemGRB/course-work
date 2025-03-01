@@ -1,6 +1,6 @@
 public class Main {
 
-    public static int ID = 0;
+   // public static int id = 0;
 
 
 
@@ -30,11 +30,11 @@ public class Main {
                 new Employee("Венедикт", "Гаврилов", "Григорьевич", 234142, 5));
 
 
-        employeeBook.removeEmployee(7);
+        employeeBook.removeEmployee(6);
         employeeBook.printAllEmployees();
         System.out.println();
-        System.out.println(employeeBook.findEmployeeWithMaxSalary());
-
-
+        System.out.println(employeeBook.findEmployeeWithMinSalaryForDepartment(2));
+        System.out.println(employeeBook.findEmployeeWithMaxSalaryForDepartment(2));
+        System.out.println(employeeBook.findEmployeeWithMinSalary());
     }
 }

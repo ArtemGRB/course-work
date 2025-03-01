@@ -6,7 +6,9 @@ public class Employee {
     private String surname;
     private float salary;
     private int department;
-    private int ID;
+    private int id;
+
+    private static int counterID = 0;
 
 
     public Employee(String name, String lastname, String surname, float salary, int department) {
@@ -15,8 +17,8 @@ public class Employee {
         this.surname = surname;
         this.salary = salary;
         this.department = department;
-        ID = Main.ID;
-        Main.ID++;
+        this.id = counterID;
+        counterID++;
     }
 
     @Override
@@ -26,10 +28,10 @@ public class Employee {
                 " " + surname +
                 ", Зарплата:" + salary +
                 ", Отдел:" + department +
-                ", ID:" + ID;
+                ", id:" + id;
     }
 
-    public String fullName() {
+    public String toStringFullName() {
         return lastname +
                 " " + name +
                 " " + surname;
@@ -40,7 +42,7 @@ public class Employee {
                 " " + name +
                 " " + surname +
                 ", Зарплата:" + salary +
-                ", ID:" + ID;
+                ", id:" + id;
     }
 
     public String getName() {
@@ -73,18 +75,18 @@ public class Employee {
     }
 
     public int getID() {
-        return ID;
+        return id;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return salary == employee.salary && department == employee.department && ID == employee.ID && Objects.equals(name, employee.name) && Objects.equals(lastname, employee.lastname) && Objects.equals(surname, employee.surname);
+        return salary == employee.salary && department == employee.department && id == employee.id && Objects.equals(name, employee.name) && Objects.equals(lastname, employee.lastname) && Objects.equals(surname, employee.surname);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, lastname, surname, salary, department, ID);
+        return Objects.hash(name, lastname, surname, salary, department, id);
     }
 }
